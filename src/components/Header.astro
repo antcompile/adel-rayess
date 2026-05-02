@@ -1,0 +1,73 @@
+---
+import type { Lang } from "../i18n/languages";
+import { useTranslations, getLocalizedPath } from "../i18n/utils";
+import { navigation } from "../data/navigation";
+import ThemeToggle from "../islands/ThemeToggle";
+import MobileMenu from "../islands/MobileMenu";
+import LanguageSwitcher from "./LanguageSwitcher.astro";
+
+interface Props {
+  lang: Lang;
+  currentPath?: string;
+}
+
+const { lang, currentPath = "/" } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<header
+  id="main-header"
+  class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+>
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-[72px]">
+      <a
+        href={getLocalizedPath(lang, "/")}
+        class="text-xl lg:text-2xl font-serif font-bold tracking-tight text-[var(--color-text)] hover:text-[var(--color-accent)] transition-colors duration-200"
+      >
+        Dr. Adel Rayess
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-7">
+        {navigation.slice(1, -1).map((item) => (
+          <a
+            href={getLocalizedPath(lang, item.href)}
+            class:list={[
+              "text-[13px] font-medium tracking-[0.08em] uppercase transition-colors duration-200 hover:text-[var(--color-accent)]",
+              currentPath === item.href
+                ? "text-[var(--color-accent)]"
+                : "text-[var(--color-text-secondary)]",
+            ]}
+          >
+            {item.label[lang]}
+          </a>
+        ))}
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <LanguageSwitcher lang={lang} currentPath={currentPath} />
+        <ThemeToggle client:load />
+        <a
+          href={getLocalizedPath(lang, "/contact")}
+          class="hidden sm:inline-flex items-center gap-2 px-6 py-3 bg-[var(--color-cta)] text-white text-sm font-semibold tracking-wide rounded-lg hover:bg-[var(--color-cta-hover)] transition-all duration-200 cursor-pointer"
+        >
+          {t("nav.bookNow")}
+        </a>
+        <MobileMenu lang={lang} client:load />
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  const header = document.getElementById("main-header");
+  if (header) {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 80) {
+        header.classList.add("glass-nav");
+      } else {
+        header.classList.remove("glass-nav");
+      }
+    });
+  }
+</script>

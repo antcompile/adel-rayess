@@ -1,0 +1,106 @@
+{
+  "nav": {
+    "bookNow": "Prendre Rendez-vous",
+    "menu": "Menu",
+    "close": "Fermer"
+  },
+  "hero": {
+    "title": "La Science de la Guérison",
+    "subtitle": "Traitement spinal non-chirurgical par la méthodologie de la Lésion Primaire",
+    "cta": "Réserver Votre Consultation",
+    "secondary": "Explorer Nos Services"
+  },
+  "trust": {
+    "years": "20+ Ans",
+    "yearsLabel": "d'Excellence Clinique",
+    "rooms": "11 Salles de Traitement",
+    "roomsLabel": "Plus Grand Centre Ostéopathique au Liban",
+    "followers": "10.6M+",
+    "followersLabel": "Communauté Réseaux Sociaux",
+    "patients": "50 000+",
+    "patientsLabel": "Patients Traités"
+  },
+  "services": {
+    "title": "Nos Services",
+    "subtitle": "Soins ostéopathiques complets propulsés par la technologie avancée et plus de 20 ans d'expertise",
+    "viewAll": "Voir Tous les Services"
+  },
+  "howItWorks": {
+    "title": "Comment Ça Marche",
+    "subtitle": "Votre chemin vers la guérison en trois étapes simples",
+    "step1Title": "Consultation",
+    "step1Desc": "Évaluation complète de votre condition avec des techniques diagnostiques avancées",
+    "step2Title": "Plan de Traitement",
+    "step2Desc": "Protocole personnalisé utilisant la méthodologie de la Lésion Primaire",
+    "step3Title": "Récupération",
+    "step3Desc": "Sessions de traitement progressives avec des résultats mesurables"
+  },
+  "testimonials": {
+    "title": "Témoignages",
+    "subtitle": "Des résultats réels de vrais patients"
+  },
+  "training": {
+    "title": "Formation Professionnelle",
+    "subtitle": "Pour les Professionnels de Santé",
+    "description": "Rejoignez nos programmes intensifs de 3 jours pour maîtriser la méthodologie de la Lésion Primaire et la Technique Rayess-Schoening",
+    "cta": "En Savoir Plus"
+  },
+  "cta": {
+    "title": "Pret a Commencer Votre Guerison?",
+    "subtitle": "Réservez votre consultation aujourd'hui et découvrez la différence d'un soin ostéopathique expert",
+    "button": "Prendre Rendez-vous",
+    "phone": "Ou appelez-nous directement"
+  },
+  "about": {
+    "title": "À Propos du Dr Rayess",
+    "subtitle": "Un Pionnier de la Médecine Ostéopathique",
+    "bio": "Le Dr Adel Rayess est Docteur en Ostéopathie avec un PhD de l'Université de Lugano, Suisse. Avec plus de 20 ans d'expérience clinique, il a développé la méthodologie de la Lésion Primaire et la Technique Rayess-Schoening brevetée.",
+    "credentials": "Qualifications",
+    "credential1": "PhD en Médecine Ostéopathique - Université de Lugano, Suisse",
+    "credential2": "Membre Actif - Société Scientifique Internationale de Médecine Ostéopathique, Genève",
+    "credential3": "Conférencier International - IGMEDT Vienne, Séminaires NeuroSpine",
+    "credential4": "Plus de 20 Ans d'Excellence Clinique",
+    "methodology": "La Lésion Primaire",
+    "methodologyDesc": "Une approche diagnostique et thérapeutique propriétaire qui identifie le dysfonctionnement biomécanique primaire responsable des symptômes du patient, permettant un traitement ciblé et efficace."
+  },
+  "contact": {
+    "title": "Contactez-Nous",
+    "subtitle": "Prenez contact pour planifier votre rendez-vous",
+    "form": {
+      "name": "Nom Complet",
+      "email": "Adresse Email",
+      "phone": "Numéro de Téléphone",
+      "message": "Votre Message",
+      "submit": "Envoyer le Message",
+      "success": "Message envoyé avec succès !",
+      "error": "Une erreur s'est produite. Veuillez réessayer."
+    },
+    "info": {
+      "address": "Adresse",
+      "phone": "Téléphone",
+      "email": "Email",
+      "hours": "Heures d'Ouverture"
+    }
+  },
+  "gallery": {
+    "title": "Galerie",
+    "subtitle": "Résultats de traitement et témoignages patients",
+    "videos": "Témoignages Vidéo",
+    "results": "Résultats de Traitement"
+  },
+  "media": {
+    "title": "Médias & Événements",
+    "subtitle": "Couverture presse, conférences et contenu en vedette",
+    "events": "Evenements a Venir",
+    "press": "Dans la Presse"
+  },
+  "footer": {
+    "tagline": "Soins Ostéopathiques de Premier Plan au Liban",
+    "quickLinks": "Liens Rapides",
+    "contactInfo": "Contact",
+    "followUs": "Suivez-Nous",
+    "rights": "Tous droits réservés.",
+    "privacy": "Politique de Confidentialité",
+    "terms": "Conditions d'Utilisation"
+  }
+}

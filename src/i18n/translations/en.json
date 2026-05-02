@@ -1,0 +1,106 @@
+{
+  "nav": {
+    "bookNow": "Book Appointment",
+    "menu": "Menu",
+    "close": "Close"
+  },
+  "hero": {
+    "title": "The Science of Healing",
+    "subtitle": "Non-surgical spinal treatment through The Primary Lesion methodology",
+    "cta": "Book Your Consultation",
+    "secondary": "Explore Our Services"
+  },
+  "trust": {
+    "years": "20+ Years",
+    "yearsLabel": "of Clinical Excellence",
+    "rooms": "11 Treatment Rooms",
+    "roomsLabel": "Largest Osteopathic Center in Lebanon",
+    "followers": "10.6M+",
+    "followersLabel": "Social Media Community",
+    "patients": "50,000+",
+    "patientsLabel": "Patients Treated"
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Comprehensive osteopathic care powered by advanced technology and 20+ years of expertise",
+    "viewAll": "View All Services"
+  },
+  "howItWorks": {
+    "title": "How It Works",
+    "subtitle": "Your path to recovery in three simple steps",
+    "step1Title": "Consultation",
+    "step1Desc": "Complete assessment of your condition using advanced diagnostic techniques",
+    "step2Title": "Treatment Plan",
+    "step2Desc": "Personalized protocol using The Primary Lesion methodology",
+    "step3Title": "Recovery",
+    "step3Desc": "Progressive treatment sessions with measurable results"
+  },
+  "testimonials": {
+    "title": "Patient Stories",
+    "subtitle": "Real results from real patients"
+  },
+  "training": {
+    "title": "Professional Training",
+    "subtitle": "For Medical Professionals",
+    "description": "Join our 3-day intensive programs to master The Primary Lesion methodology and the Rayess-Schoening Technique",
+    "cta": "Learn More"
+  },
+  "cta": {
+    "title": "Ready to Start Your Recovery?",
+    "subtitle": "Book your consultation today and experience the difference of expert osteopathic care",
+    "button": "Book Appointment",
+    "phone": "Or call us directly"
+  },
+  "about": {
+    "title": "About Dr. Rayess",
+    "subtitle": "A Pioneer in Osteopathic Medicine",
+    "bio": "Dr. Adel Rayess is a Doctor of Osteopathy with a PhD from the University of Lugano, Switzerland. With over 20 years of clinical experience, he developed The Primary Lesion methodology and the trademarked Rayess-Schoening Technique.",
+    "credentials": "Credentials",
+    "credential1": "PhD in Osteopathic Medicine - University of Lugano, Switzerland",
+    "credential2": "Active Member - International Scientific Society of Osteopathic Medicine, Geneva",
+    "credential3": "International Lecturer - IGMEDT Vienna, NeuroSpine Seminars",
+    "credential4": "20+ Years of Clinical Excellence",
+    "methodology": "The Primary Lesion",
+    "methodologyDesc": "A proprietary diagnostic and treatment approach that identifies the primary biomechanical dysfunction responsible for a patient's symptoms, enabling targeted and effective treatment."
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Get in touch to schedule your appointment",
+    "form": {
+      "name": "Full Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "message": "Your Message",
+      "submit": "Send Message",
+      "success": "Message sent successfully!",
+      "error": "Something went wrong. Please try again."
+    },
+    "info": {
+      "address": "Address",
+      "phone": "Phone",
+      "email": "Email",
+      "hours": "Working Hours"
+    }
+  },
+  "gallery": {
+    "title": "Gallery",
+    "subtitle": "Treatment results and patient testimonials",
+    "videos": "Video Testimonials",
+    "results": "Treatment Results"
+  },
+  "media": {
+    "title": "Media & Events",
+    "subtitle": "Press coverage, speaking engagements, and featured content",
+    "events": "Upcoming Events",
+    "press": "In The Press"
+  },
+  "footer": {
+    "tagline": "Leading Osteopathic Care in Lebanon",
+    "quickLinks": "Quick Links",
+    "contactInfo": "Contact",
+    "followUs": "Follow Us",
+    "rights": "All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
+  }
+}

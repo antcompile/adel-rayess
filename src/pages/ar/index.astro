@@ -1,0 +1,107 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import SectionHeading from "../../components/SectionHeading.astro";
+import HeroAnimation from "../../islands/HeroAnimation";
+import ScrollReveal from "../../islands/ScrollReveal";
+import CountUpStats from "../../islands/CountUpStats";
+import VideoPlayer from "../../islands/VideoPlayer";
+import { useTranslations, getLocalizedPath } from "../../i18n/utils";
+import { services } from "../../data/services";
+import { siteConfig } from "../../data/siteConfig";
+import { ArrowRight, Activity } from "lucide-react";
+
+const lang = "ar";
+const t = useTranslations(lang);
+---
+
+<BaseLayout title={`${siteConfig.name} - ${t("hero.subtitle")}`} lang={lang}>
+  <Header lang={lang} currentPath="/" />
+
+  <section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+    <div class="absolute inset-0 bg-gradient-to-b from-[var(--color-accent)]/5 to-transparent"></div>
+    <HeroAnimation
+      client:load
+      title={t("hero.title")}
+      subtitle={t("hero.subtitle")}
+      ctaText={t("hero.cta")}
+      ctaHref={getLocalizedPath(lang, "/contact")}
+      secondaryText={t("hero.secondary")}
+      secondaryHref={getLocalizedPath(lang, "/services")}
+    />
+  </section>
+
+  <section class="section-padding bg-[var(--color-surface)]">
+    <div class="container mx-auto">
+      <CountUpStats
+        client:visible
+        stats={[
+          { value: "20+", label: t("trust.yearsLabel") },
+          { value: "11", label: t("trust.roomsLabel") },
+          { value: "50,000+", label: t("trust.patientsLabel") },
+        ]}
+      />
+    </div>
+  </section>
+
+  <section class="section-padding">
+    <div class="container mx-auto">
+      <ScrollReveal client:visible>
+        <SectionHeading title={t("services.title")} subtitle={t("services.subtitle")} />
+      </ScrollReveal>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        {services.map((service, i) => (
+          <ScrollReveal client:visible delay={i * 0.1}>
+            <div class="p-8 bg-[var(--color-surface)] border border-[var(--color-border)] hover:border-[var(--color-accent)]/30 hover:shadow-lg transition-all duration-300 cursor-pointer group">
+              <div class="w-12 h-12 flex items-center justify-center text-[var(--color-accent)] mb-6 group-hover:scale-110 transition-transform duration-200">
+                <Activity size={28} />
+              </div>
+              <h3 class="text-xl font-serif font-bold text-[var(--color-text)] mb-3">{service.title[lang]}</h3>
+              <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed">{service.description[lang]}</p>
+            </div>
+          </ScrollReveal>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding bg-[var(--color-surface)]">
+    <div class="container mx-auto">
+      <ScrollReveal client:visible>
+        <SectionHeading title={t("howItWorks.title")} subtitle={t("howItWorks.subtitle")} />
+      </ScrollReveal>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-16">
+        {[
+          { num: "01", title: t("howItWorks.step1Title"), desc: t("howItWorks.step1Desc") },
+          { num: "02", title: t("howItWorks.step2Title"), desc: t("howItWorks.step2Desc") },
+          { num: "03", title: t("howItWorks.step3Title"), desc: t("howItWorks.step3Desc") },
+        ].map((step, i) => (
+          <ScrollReveal client:visible delay={i * 0.15}>
+            <div class="text-center">
+              <div class="text-6xl font-serif font-bold text-[var(--color-accent)]/20 mb-4">{step.num}</div>
+              <h3 class="text-2xl font-serif font-bold text-[var(--color-text)] mb-3">{step.title}</h3>
+              <p class="text-[var(--color-text-secondary)] leading-relaxed">{step.desc}</p>
+            </div>
+          </ScrollReveal>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding bg-[var(--color-accent)]/5">
+    <div class="container mx-auto">
+      <ScrollReveal client:visible>
+        <div class="max-w-3xl mx-auto text-center">
+          <h2 class="text-4xl md:text-5xl font-serif font-bold text-[var(--color-text)] mb-6">{t("cta.title")}</h2>
+          <p class="text-lg text-[var(--color-text-secondary)] mb-8">{t("cta.subtitle")}</p>
+          <a href={getLocalizedPath(lang, "/contact")} class="px-8 py-4 bg-[var(--color-cta)] text-white font-semibold text-lg rounded-lg hover:bg-[var(--color-cta-hover)] transition-colors duration-200 cursor-pointer inline-block">
+            {t("cta.button")}
+          </a>
+        </div>
+      </ScrollReveal>
+    </div>
+  </section>
+
+  <Footer lang={lang} />
+</BaseLayout>

@@ -1,0 +1,33 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import SectionHeading from "../../components/SectionHeading.astro";
+import ScrollReveal from "../../islands/ScrollReveal";
+import { useTranslations, getLocalizedPath } from "../../i18n/utils";
+import { siteConfig } from "../../data/siteConfig";
+
+const lang = "ar";
+const t = useTranslations(lang);
+---
+
+<BaseLayout title={`${t("training.title")} - ${siteConfig.name}`} lang={lang}>
+  <Header lang={lang} currentPath="/training" />
+
+  <section class="pt-32 pb-16 section-padding">
+    <div class="container mx-auto">
+      <ScrollReveal client:visible>
+        <SectionHeading title={t("training.title")} subtitle={t("training.subtitle")} />
+        <p class="text-lg text-[var(--color-text-secondary)] text-center max-w-2xl mx-auto mt-4">{t("training.description")}</p>
+      </ScrollReveal>
+
+      <div class="mt-16 text-center">
+        <a href={getLocalizedPath(lang, "/contact")} class="inline-block px-8 py-4 bg-[var(--color-cta)] text-white font-semibold rounded-lg hover:bg-[var(--color-cta-hover)] transition-colors duration-200 cursor-pointer">
+          {t("cta.button")}
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <Footer lang={lang} />
+</BaseLayout>

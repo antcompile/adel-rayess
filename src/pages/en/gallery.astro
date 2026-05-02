@@ -1,0 +1,64 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import SectionHeading from "../../components/SectionHeading.astro";
+import ScrollReveal from "../../islands/ScrollReveal";
+import VideoPlayer from "../../islands/VideoPlayer";
+import { useTranslations } from "../../i18n/utils";
+import { siteConfig } from "../../data/siteConfig";
+
+const lang = "en";
+const t = useTranslations(lang);
+
+const videos = [
+  { id: "dQw4w9WgXcQ", title: "Spinal Adjustment Technique" },
+  { id: "dQw4w9WgXcQ", title: "Patient Recovery: Disc Herniation" },
+  { id: "dQw4w9WgXcQ", title: "The Primary Lesion Explained" },
+  { id: "dQw4w9WgXcQ", title: "Before & After: Posture Correction" },
+  { id: "dQw4w9WgXcQ", title: "Lordex Decompression Session" },
+  { id: "dQw4w9WgXcQ", title: "Patient Testimonial" },
+];
+---
+
+<BaseLayout title={`${t("gallery.title")} - ${siteConfig.name}`} lang={lang}>
+  <Header lang={lang} currentPath="/gallery" />
+
+  <section class="pt-32 pb-16 section-padding">
+    <div class="container mx-auto">
+      <ScrollReveal client:visible>
+        <SectionHeading title={t("gallery.title")} subtitle={t("gallery.subtitle")} />
+      </ScrollReveal>
+
+      <div class="mt-12">
+        <ScrollReveal client:visible>
+          <h3 class="text-2xl font-serif font-bold text-[var(--color-text)] mb-8">{t("gallery.videos")}</h3>
+        </ScrollReveal>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {videos.map((video, i) => (
+            <ScrollReveal client:visible delay={i * 0.1}>
+              <VideoPlayer client:visible videoId={video.id} title={video.title} />
+            </ScrollReveal>
+          ))}
+        </div>
+      </div>
+
+      <div class="mt-20">
+        <ScrollReveal client:visible>
+          <h3 class="text-2xl font-serif font-bold text-[var(--color-text)] mb-8">{t("gallery.results")}</h3>
+        </ScrollReveal>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {Array.from({ length: 6 }).map((_, i) => (
+            <ScrollReveal client:visible delay={i * 0.1}>
+              <div class="aspect-square bg-[var(--color-surface-elevated)] border border-[var(--color-border)] flex items-center justify-center">
+                <p class="text-[var(--color-text-secondary)] text-sm">Treatment Result {i + 1}</p>
+              </div>
+            </ScrollReveal>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer lang={lang} />
+</BaseLayout>

@@ -1,0 +1,48 @@
+---
+import "../styles/global.css";
+import { languages, type Lang } from "../i18n/languages";
+import { getDir } from "../i18n/utils";
+
+interface Props {
+  title: string;
+  description?: string;
+  lang?: Lang;
+}
+
+const { title, description = "Leading osteopathic physician specializing in non-surgical spinal treatment.", lang = "en" } = Astro.props;
+const dir = getDir(lang);
+const langData = languages[lang];
+---
+
+<!doctype html>
+<html lang={lang} dir={dir} class="grain">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <link rel="preload" href="/fonts/bodoni-moda-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/jost-latin.woff2" as="font" type="font/woff2" crossorigin />
+    {dir === "rtl" && (
+      <link rel="preload" href="/fonts/ibm-plex-sans-arabic-400.woff2" as="font" type="font/woff2" crossorigin />
+    )}
+
+    <title>{title}</title>
+
+    <script is:inline>
+      (function() {
+        const theme = localStorage.getItem("theme");
+        if (theme === "dark" || (!theme && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+          document.documentElement.classList.add("dark");
+        }
+      })();
+    </script>
+  </head>
+  <body class="min-h-screen bg-[var(--color-background)] text-[var(--color-text)] transition-colors duration-300">
+    <slot />
+  </body>
+</html>

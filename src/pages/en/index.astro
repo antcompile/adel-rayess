@@ -1,0 +1,218 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import SectionHeading from "../../components/SectionHeading.astro";
+import HeroAnimation from "../../islands/HeroAnimation";
+import ScrollReveal from "../../islands/ScrollReveal";
+import CountUpStats from "../../islands/CountUpStats";
+import VideoPlayer from "../../islands/VideoPlayer";
+import { useTranslations, getLocalizedPath } from "../../i18n/utils";
+import { services } from "../../data/services";
+import { siteConfig } from "../../data/siteConfig";
+import { Activity, Heart, Brain, User, Dumbbell, ArrowDownUp, ArrowRight } from "lucide-react";
+
+const lang = "en";
+const t = useTranslations(lang);
+
+const iconMap: Record<string, any> = { Activity, Heart, Brain, User, Dumbbell, ArrowDownUp };
+---
+
+<BaseLayout title={`${siteConfig.name} - ${t("hero.subtitle")}`} lang={lang}>
+  <Header lang={lang} currentPath="/" />
+
+  <!-- Hero -->
+  <section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+    <div class="absolute inset-0 bg-gradient-to-b from-[var(--color-accent)]/5 via-transparent to-[var(--color-background)]"></div>
+    <HeroAnimation
+      client:load
+      title={t("hero.title")}
+      subtitle={t("hero.subtitle")}
+      ctaText={t("hero.cta")}
+      ctaHref={getLocalizedPath(lang, "/contact")}
+      secondaryText={t("hero.secondary")}
+      secondaryHref={getLocalizedPath(lang, "/services")}
+    />
+  </section>
+
+  <!-- Trust Bar / Stats -->
+  <section class="section-padding bg-[var(--color-surface)] border-y border-[var(--color-border)]">
+    <div class="container mx-auto">
+      <CountUpStats
+        client:visible
+        stats={[
+          { value: "20+", label: t("trust.yearsLabel") },
+          { value: "11", label: t("trust.roomsLabel") },
+          { value: "50,000+", label: t("trust.patientsLabel") },
+        ]}
+      />
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="section-padding">
+    <div class="container mx-auto">
+      <ScrollReveal client:visible>
+        <SectionHeading label="What We Treat" title={t("services.title")} subtitle={t("services.subtitle")} />
+      </ScrollReveal>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        {services.map((service, i) => (
+          <ScrollReveal client:visible delay={i * 0.1}>
+            <div class="p-8 lg:p-10 bg-[var(--color-surface)] border border-[var(--color-border)] hover:border-[var(--color-accent)]/30 hover:shadow-xl transition-all duration-300 cursor-pointer group h-full">
+              <div class="w-12 h-12 flex items-center justify-center text-[var(--color-accent)] mb-6 group-hover:scale-110 transition-transform duration-200">
+                <Activity size={28} />
+              </div>
+              <h3 class="text-xl font-serif font-bold text-[var(--color-text)] mb-3">
+                {service.title[lang]}
+              </h3>
+              <p class="text-[15px] text-[var(--color-text-secondary)] leading-relaxed">
+                {service.description[lang]}
+              </p>
+            </div>
+          </ScrollReveal>
+        ))}
+      </div>
+
+      <ScrollReveal client:visible>
+        <div class="mt-14 text-center">
+          <a
+            href={getLocalizedPath(lang, "/services")}
+            class="inline-flex items-center gap-2 text-[var(--color-accent)] font-semibold tracking-wide hover:gap-4 transition-all duration-300 cursor-pointer"
+          >
+            {t("services.viewAll")}
+            <ArrowRight size={18} />
+          </a>
+        </div>
+      </ScrollReveal>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="section-padding bg-[var(--color-surface)]">
+    <div class="container mx-auto">
+      <ScrollReveal client:visible>
+        <SectionHeading label="Your Journey" title={t("howItWorks.title")} subtitle={t("howItWorks.subtitle")} />
+      </ScrollReveal>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-20">
+        {[
+          { num: "01", title: t("howItWorks.step1Title"), desc: t("howItWorks.step1Desc") },
+          { num: "02", title: t("howItWorks.step2Title"), desc: t("howItWorks.step2Desc") },
+          { num: "03", title: t("howItWorks.step3Title"), desc: t("howItWorks.step3Desc") },
+        ].map((step, i) => (
+          <ScrollReveal client:visible delay={i * 0.15}>
+            <div class="text-center">
+              <div class="text-7xl lg:text-8xl font-serif font-bold text-[var(--color-accent)]/10 leading-none mb-6">
+                {step.num}
+              </div>
+              <h3 class="text-2xl font-serif font-bold text-[var(--color-text)] mb-4">
+                {step.title}
+              </h3>
+              <p class="text-[var(--color-text-secondary)] leading-relaxed max-w-xs mx-auto">
+                {step.desc}
+              </p>
+            </div>
+          </ScrollReveal>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Video Testimonials -->
+  <section class="section-padding">
+    <div class="container mx-auto">
+      <ScrollReveal client:visible>
+        <SectionHeading label="Real Results" title={t("testimonials.title")} subtitle={t("testimonials.subtitle")} />
+      </ScrollReveal>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <ScrollReveal client:visible delay={0}>
+          <VideoPlayer
+            client:visible
+            videoId="dQw4w9WgXcQ"
+            title="Patient Recovery Story"
+          />
+        </ScrollReveal>
+        <ScrollReveal client:visible delay={0.1}>
+          <VideoPlayer
+            client:visible
+            videoId="dQw4w9WgXcQ"
+            title="Spinal Treatment Results"
+          />
+        </ScrollReveal>
+        <ScrollReveal client:visible delay={0.2}>
+          <VideoPlayer
+            client:visible
+            videoId="dQw4w9WgXcQ"
+            title="The Primary Lesion Explained"
+          />
+        </ScrollReveal>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Training CTA -->
+  <section class="section-padding bg-[var(--color-surface)]">
+    <div class="container mx-auto">
+      <ScrollReveal client:visible>
+        <div class="max-w-3xl mx-auto text-center">
+          <p class="section-label mb-5">
+            {t("training.subtitle")}
+          </p>
+          <h2 class="font-serif font-bold text-[var(--color-text)] mb-6">
+            {t("training.title")}
+          </h2>
+          <p class="text-lg lg:text-xl text-[var(--color-text-secondary)] mb-10 leading-relaxed">
+            {t("training.description")}
+          </p>
+          <a
+            href={getLocalizedPath(lang, "/training")}
+            class="inline-flex items-center gap-2 px-10 py-4 border-2 border-[var(--color-accent)] text-[var(--color-accent)] font-semibold tracking-wide rounded-lg hover:bg-[var(--color-accent)] hover:text-white transition-all duration-200 cursor-pointer"
+          >
+            {t("training.cta")}
+            <ArrowRight size={18} />
+          </a>
+        </div>
+      </ScrollReveal>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="section-padding bg-[var(--color-accent)]/5">
+    <div class="container mx-auto">
+      <ScrollReveal client:visible>
+        <div class="max-w-3xl mx-auto text-center">
+          <h2 class="font-serif font-bold text-[var(--color-text)] mb-6">
+            {t("cta.title")}
+          </h2>
+          <p class="text-lg lg:text-xl text-[var(--color-text-secondary)] mb-10">
+            {t("cta.subtitle")}
+          </p>
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+            <a
+              href={getLocalizedPath(lang, "/contact")}
+              class="px-10 py-4 bg-[var(--color-cta)] text-white font-semibold text-base tracking-wide rounded-lg hover:bg-[var(--color-cta-hover)] hover:translate-y-[-2px] hover:shadow-lg transition-all duration-200 cursor-pointer"
+            >
+              {t("cta.button")}
+            </a>
+            <div class="text-[var(--color-text-secondary)] text-center">
+              <span class="text-sm">{t("cta.phone")}</span>
+              <a href={`tel:${siteConfig.phone.replace(/\s/g, "")}`} class="block text-lg font-semibold text-[var(--color-text)] hover:text-[var(--color-accent)] transition-colors duration-200 cursor-pointer">
+                {siteConfig.phone}
+              </a>
+            </div>
+          </div>
+        </div>
+      </ScrollReveal>
+    </div>
+  </section>
+
+  <!-- Floating Mobile CTA -->
+  <a href={getLocalizedPath(lang, "/contact")} class="floating-cta lg:hidden">
+    {t("nav.bookNow")}
+  </a>
+
+  <Footer lang={lang} />
+</BaseLayout>
