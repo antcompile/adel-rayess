@@ -21,9 +21,13 @@ const t = useTranslations(lang);
         <SectionHeading title={t("media.title")} subtitle={t("media.subtitle")} />
       </ScrollReveal>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
-        {Array.from({ length: 3 }).map((_, i) => (
+        {[
+          { id: "9rXfho-DEgA", title: "مقابلة: فن تقويم العظام" },
+          { id: "Sl5_us7VkCA", title: "ندوة NeuroSpine فيينا 2026" },
+          { id: "Km3Wtv8LkQs", title: "الدواء ليس دائما في علب" },
+        ].map((video, i) => (
           <ScrollReveal client:visible delay={i * 0.1}>
-            <VideoPlayer client:visible videoId="dQw4w9WgXcQ" title={`فيديو مميز ${i + 1}`} />
+            <VideoPlayer client:visible videoId={video.id} title={video.title} />
           </ScrollReveal>
         ))}
       </div>

@@ -21,9 +21,16 @@ const t = useTranslations(lang);
         <SectionHeading title={t("gallery.title")} subtitle={t("gallery.subtitle")} />
       </ScrollReveal>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
-        {Array.from({ length: 6 }).map((_, i) => (
+        {[
+          { id: "u_eEpuY7r_g", title: "حل عرق النسا" },
+          { id: "x0J6XiKTYIM", title: "ليست فقط لبناء العضلات" },
+          { id: "rDTXi0EY5FU", title: "التخلص من انحناء الظهر" },
+          { id: "aTVCo0Q_HmE", title: "الحل النهائي للصداع النصفي" },
+          { id: "QV81cH92C60", title: "جراحة ديسك فاشلة" },
+          { id: "h6TrZ92Aei0", title: "رجل لم يتوقف عن الاهتزاز لمدة 4 سنوات" },
+        ].map((video, i) => (
           <ScrollReveal client:visible delay={i * 0.1}>
-            <VideoPlayer client:visible videoId="dQw4w9WgXcQ" title={`فيديو ${i + 1}`} />
+            <VideoPlayer client:visible videoId={video.id} title={video.title} />
           </ScrollReveal>
         ))}
       </div>

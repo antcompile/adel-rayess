@@ -52,16 +52,16 @@
     "phone": "Ou appelez-nous directement"
   },
   "about": {
-    "title": "À Propos du Dr Rayess",
-    "subtitle": "Un Pionnier de la Médecine Ostéopathique",
-    "bio": "Le Dr Adel Rayess est Docteur en Ostéopathie avec un PhD de l'Université de Lugano, Suisse. Avec plus de 20 ans d'expérience clinique, il a développé la méthodologie de la Lésion Primaire et la Technique Rayess-Schoening brevetée.",
+    "title": "A Propos du Dr Rayess",
+    "subtitle": "Un Pionnier de la Medecine Osteopathique",
+    "bio": "Le Dr Adel Rayess est Docteur en Osteopathie diplome de Lausanne, Suisse, grace a une bourse du gouvernement suisse. Avec plus de 28 ans d'experience clinique, il a developpe la methodologie de la Lesion Primaire et la Technique Rayess-Schoening brevetee, traitant plus de 10 000 patients.",
     "credentials": "Qualifications",
-    "credential1": "PhD en Médecine Ostéopathique - Université de Lugano, Suisse",
-    "credential2": "Membre Actif - Société Scientifique Internationale de Médecine Ostéopathique, Genève",
-    "credential3": "Conférencier International - IGMEDT Vienne, Séminaires NeuroSpine",
-    "credential4": "Plus de 20 Ans d'Excellence Clinique",
-    "methodology": "La Lésion Primaire",
-    "methodologyDesc": "Une approche diagnostique et thérapeutique propriétaire qui identifie le dysfonctionnement biomécanique primaire responsable des symptômes du patient, permettant un traitement ciblé et efficace."
+    "credential1": "Docteur en Osteopathie - Lausanne, Suisse (2004)",
+    "credential2": "Membre Actif - Societe Scientifique Internationale de Medecine Osteopathique, Geneve",
+    "credential3": "Conferencier International - IGMEDT Vienne, Seminaires NeuroSpine",
+    "credential4": "Plus de 28 Ans d'Experience Clinique",
+    "methodology": "La Lesion Primaire",
+    "methodologyDesc": "Une approche diagnostique et therapeutique proprietaire qui identifie le dysfonctionnement biomecanique primaire responsable des symptomes du patient, permettant un traitement cible et efficace."
   },
   "contact": {
     "title": "Contactez-Nous",
